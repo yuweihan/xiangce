@@ -22,7 +22,7 @@
 	
 
 </ul>
-<div class="large">
+<div class="large" id="large-cont">
 	<img id="large_img">
 </div>
 <script>
@@ -51,7 +51,18 @@
 	$('#container').html(tmpl);
 }
 render();
+var loadImg=function(id){
+&('#large_container').css({
+	width:zWin.width(),
+	height:zWin.height()
+}).show();
+var imgsrc="'+id+'.large.jpg";
+}
+$ ('container').delegate('li','tap',function(){
+	var _id=$(this).attr('data-id');
+	loadImg(_id);
 
+})
 </script>
 </body>
 </html>
